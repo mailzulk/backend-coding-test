@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "nyc mocha tests",
+    "test": " ./node_modules/.bin/eslint src/* & nyc mocha tests",
     "start": "node index.js"
   },
   "keywords": [
