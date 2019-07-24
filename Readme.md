@@ -7,9 +7,11 @@ The goal of these exercises are to assess your proficiency in software engineeri
 1. Fork this repository to your own github profile
 2. Ensure `node (>8.6 and <= 10)` and `npm` are installed
 3. Run `npm install`
-4. Run `npm test`
-5. Run `npm start`
-6. Hit the server to test health `curl localhost:8010/health` and expect a `200` response 
+4. Run `npm install apidoc -g` to install apidoc globally
+5. For further reference, you can check the API documentation on `apidoc/index.html`
+5. Run `npm test`
+6. Run `npm start`
+7. Hit the server to test health `curl localhost:8010/health` and expect a `200` response 
 
 ## Tasks
 
