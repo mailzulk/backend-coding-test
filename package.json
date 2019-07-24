@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests",
+    "test": "nyc mocha tests",
     "start": "node index.js"
   },
   "keywords": [
@@ -18,15 +18,24 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.16.4",
-    "sqlite3": "^4.0.6"
+    "sqlite3": "^4.0.6",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prepush": "^3.1.11",
     "supertest": "^4.0.2"
   },
   "apidoc": {
     "name": "Rides API Documentation",
     "title": "API Documentation for Xendit's Backend Coding Test",
     "description": "This is the API documentation for Xendit's backend coding test. The API consists of 3 API calls:"
-  }
+  },
+  "prepush": [
+    "npm test"
+  ]
 }
