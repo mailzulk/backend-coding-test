@@ -2,11 +2,25 @@
 
 const express = require('express');
 const app = express();
+const winston = require('winston');
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// Logger configuration
+const logConfiguration = {
+    'transports': [
+        new winston.transports.File({
+            filename: './logs/example-2.log'
+        })
+    ]
+};
+
+// Create the logger
+const logger = winston.createLogger(logConfiguration);
+
 
 module.exports = (db) => {
     /**
@@ -16,7 +30,8 @@ module.exports = (db) => {
      * 
      * @apiSuccess {String} Return the string 'Healthy'.
      */   
-    app.get('/health', (req, res) => res.status(200).send('Healthy'));
+    app.get('/health', (req, res) => 
+        res.status(200).send('Healthy'));
 
     /**
      * @api {post} /rides Add New Rides
@@ -163,7 +178,7 @@ module.exports = (db) => {
                         message: 'Server encountered an error'
                     });
                 }
-
+                
                 res.status(200).send(rows);
             });
         });
