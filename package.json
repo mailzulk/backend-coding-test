@@ -23,5 +23,10 @@
   "devDependencies": {
     "mocha": "^6.1.4",
     "supertest": "^4.0.2"
+  },
+  "apidoc": {
+    "name": "Rides API Documentation",
+    "title": "API Documentation for Xendit's Backend Coding Test",
+    "description": "This is the API documentation for Xendit's backend coding test. The API consists of 3 API calls:"
   }
 }
