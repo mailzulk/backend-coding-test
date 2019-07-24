@@ -173,12 +173,12 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 400 StartLatAndLongError\n{\n    \"error_code\": 400,\n    \"message\": \"Start latitude and longitude must be between -90 - 90 and -180 to 180 degrees respectively\"\n}",
+          "content": "HTTP/1.1 400 StartLatAndLongError\n{\n    \"error_code\": 400,\n    \"message\": \"Start latitude and longitude must be between -90 - 90\n                and -180 to 180 degrees respectively\"\n}",
           "type": "json"
         },
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 400 EndLatAndLongError\n{\n    \"error_code\": 400,\n    \"message\": \"End latitude and longitude must be between -90 - 90 and -180 to 180 degrees respectively\"\n}",
+          "content": "HTTP/1.1 400 EndLatAndLongError\n{\n    \"error_code\": 400,\n    \"message\": \"End latitude and longitude must be between -90 - 90\n                 and -180 to 180 degrees respectively\"\n}",
           "type": "json"
         },
         {
