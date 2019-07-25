@@ -193,6 +193,20 @@ describe('API tests', () => {
         .expect('Content-Type', /json/)
         .expect(200, done)
     });
+
+    it('should return all rides data in page 1', (done) => {
+      request(app)
+        .get('/rides/?page=1')
+        .expect('Content-Type', /json/)
+        .expect(200, done)
+    });
+
+    it('should not return data since page 2 is not populated', (done) => {
+      request(app)
+        .get('/rides/?page=2')
+        .expect('Content-Type', /json/)
+        .expect(404, done)
+    });
   });
 
   describe('GET /rides/:id', () => {

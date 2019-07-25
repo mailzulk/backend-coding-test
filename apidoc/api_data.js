@@ -213,6 +213,26 @@ define({ "api": [
     "title": "Get All Rides",
     "name": "GetAllRides",
     "group": "Rides",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>Page Number (Optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Specifies the limit of pagination (default: 5) (Optional)</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
