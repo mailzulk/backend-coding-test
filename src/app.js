@@ -208,6 +208,9 @@ module.exports = (db) => {
      * @apiName GetAllRides
      * @apiGroup Rides
      *
+     * @apiParam {Number} page Page Number (Optional)
+     * @apiParam {Number} limit Specifies the limit of pagination (default: 5) (Optional)
+     *
      * @apiSuccess {Number} rideID ID of the ride
      * @apiSuccess {Number} start_lat Start Latitude of the ride
      * @apiSuccess {Number} start_long Start Longitude of the ride
@@ -261,7 +264,10 @@ module.exports = (db) => {
      */
 
   app.get('/rides', (req, res) => {
-    db.all('SELECT * FROM Rides', (err, rows) => {
+    const page = (req.query && req.query.page) ? req.query.page : 1;
+    const limit = (req.query && req.query.limit) ? req.query.limit : 5;
+    const offset = (page - 1) * limit;
+    db.all('SELECT * FROM Rides LIMIT ?, ?', [offset, limit], (err, rows) => {
       if (err) {
         const message = {
           error_code: '500',
